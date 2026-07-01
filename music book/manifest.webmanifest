@@ -1,0 +1,17 @@
+{
+  "name": "Music Book",
+  "short_name": "Music Book",
+  "description": "A playful retro music app for online previews and offline listening.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#fff5d8",
+  "theme_color": "#f46138",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
