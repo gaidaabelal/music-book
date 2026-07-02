@@ -5,59 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Music Book is a playful retro music app for online discovery and offline listening."
+      content="Audio Book is a clean vintage audio player for full-length archive listening and your own saved songs."
     />
-    <meta name="theme-color" content="#f46138" />
-    <title>Music Book</title>
+    <meta name="application-name" content="Audio Book" />
+    <meta name="author" content="Gaida'a Belal" />
+    <meta
+      name="copyright"
+      content="Copyright (c) 2026 Gaida'a Belal. All rights reserved."
+    />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Audio Book" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; base-uri 'self'; object-src 'none'; form-action 'self'; frame-src 'none'; manifest-src 'self'; worker-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self' data:; img-src 'self' data: blob: https:; connect-src 'self' https: http://localhost:* http://127.0.0.1:*; media-src 'self' blob: data: https: http://localhost:* http://127.0.0.1:*"
+    />
+    <meta name="theme-color" content="#24313e" />
+    <title>Audio Book</title>
     <link rel="manifest" href="manifest.webmanifest" />
     <link rel="icon" href="icon.svg" type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Audiowide&family=Space+Grotesk:wght@400;500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="icon" href="icons/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="icon" href="icons/favicon-16.png" sizes="16x16" type="image/png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" sizes="180x180" />
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
   </head>
   <body>
+    <div class="stars-layer" id="starsLayer" aria-hidden="true"></div>
+    <div class="pointer-aura" id="pointerAura" aria-hidden="true"></div>
     <div class="page-shell">
       <header class="hero">
         <section class="hero-copy">
-          <p class="eyebrow">Friendly tunes, pocket-sized fun</p>
-          <h1>Music Book</h1>
+          <p class="eyebrow">Full-length listening, softly restored</p>
+          <h1>Audio Book</h1>
           <p class="hero-text">
-            Search for music online, keep your own songs ready for offline
-            listening, and watch every track slide into a joyful old-school CD
-            player.
+            Search full tracks from an open audio archive, keep your own songs
+            nearby, and let every record spin inside a clean vintage player.
           </p>
 
           <div class="hero-actions">
-            <button class="mood-chip" type="button" data-mood="sunny road trip songs">
-              Road Trip
+            <button class="mood-chip" type="button" data-mood="vintage jazz">
+              Vintage Jazz
             </button>
-            <button class="mood-chip" type="button" data-mood="happy indie pop">
-              Happy Pop
+            <button class="mood-chip" type="button" data-mood="acoustic folk">
+              Acoustic Folk
             </button>
-            <button class="mood-chip" type="button" data-mood="cozy acoustic">
-              Cozy Acoustic
+            <button class="mood-chip" type="button" data-mood="instrumental piano">
+              Piano Nights
             </button>
-            <button class="mood-chip" type="button" data-mood="city pop classics">
-              City Pop
+            <button class="mood-chip" type="button" data-mood="old time radio">
+              Old Time Radio
             </button>
           </div>
 
           <div class="mini-note">
-            Music Book can stream online previews and save audio files you own,
-            import from your device, or fetch from direct audio links you have
-            permission to store offline.
+            Audio Book now favors full playable recordings from a public audio
+            archive, plus direct audio files you import or save yourself.
           </div>
         </section>
 
         <section class="player-stage">
           <div class="cd-player" id="cdPlayer">
             <div class="player-topline">
-              <span class="player-brand">Music Book MB-90</span>
+              <span class="player-brand">Audio Book AB-90</span>
               <div class="status-lights" aria-hidden="true">
                 <span class="status-light amber"></span>
                 <span class="status-light coral"></span>
@@ -67,19 +80,31 @@
 
             <div class="player-screen">
               <span class="screen-tag">Now Spinning</span>
-              <h2 id="screenTitle">Drop a song into the tray</h2>
-              <p id="screenMeta">Search online or load your own audio crate.</p>
+              <h2 id="screenTitle">Choose a full record</h2>
+              <p id="screenMeta">
+                Search the archive, load your own songs, or tap the disc to
+                start a lucky mix.
+              </p>
             </div>
 
-            <div class="disc-bay">
-              <div class="disc-shell" id="discShell">
-                <div class="disc-art-ring" id="discArtRing">
-                  <img id="discArt" class="disc-art" alt="" />
-                  <span id="discInitials" class="disc-initials">MB</span>
-                </div>
-                <span class="disc-hole"></span>
+            <div class="player-cosmos">
+              <div class="disc-bay">
+                <button
+                  class="disc-shell"
+                  id="discShell"
+                  type="button"
+                  aria-label="Start a lucky mix"
+                  title="Start a lucky mix"
+                >
+                  <div class="disc-art-ring" id="discArtRing">
+                    <img id="discArt" class="disc-art" alt="" />
+                    <span id="discInitials" class="disc-initials">AB</span>
+                  </div>
+                  <span class="disc-hole"></span>
+                </button>
+                <div class="laser-arm" aria-hidden="true"></div>
               </div>
-              <div class="laser-arm" aria-hidden="true"></div>
+
             </div>
 
             <div class="timebar">
@@ -132,7 +157,7 @@
               <p class="panel-kicker">Online discovery</p>
               <h2>Search and listen online</h2>
             </div>
-            <span class="panel-badge">Preview Shelf</span>
+            <span class="panel-badge">Full Length</span>
           </div>
 
           <form id="searchForm" class="search-form">
@@ -142,18 +167,21 @@
                 id="searchInput"
                 name="query"
                 type="search"
-                placeholder="Try artist names, moods, or genres..."
+                placeholder="Try song title + artist, mood, or genre..."
                 autocomplete="off"
               />
             </label>
             <button class="action-button" type="submit">Search</button>
           </form>
+          <div id="searchHistory" class="search-history" hidden></div>
 
           <p class="panel-note">
-            Online results use public catalog previews, so some clips are short.
+            Results come from a public audio archive, so quality and metadata
+            can vary from item to item. Exact title plus artist usually gives
+            the strongest matches.
           </p>
           <p id="searchStatus" class="status-text" aria-live="polite">
-            Pick a mood chip or search for a favorite artist to get started.
+            Try jazz, folk, ambient, radio, or a specific recording title.
           </p>
           <div id="searchResults" class="card-grid"></div>
         </section>
@@ -161,17 +189,17 @@
         <section class="panel panel-library">
           <div class="panel-heading">
             <div>
-              <p class="panel-kicker">Offline crate</p>
-              <h2>Keep your tracks nearby</h2>
+              <p class="panel-kicker">Personal collection</p>
+              <h2>Keep your own full tracks nearby</h2>
             </div>
-            <span class="panel-badge">Works offline</span>
+            <span class="panel-badge">Saved locally</span>
           </div>
 
           <div class="library-actions">
             <label class="upload-tile" for="fileInput">
               <input id="fileInput" type="file" accept="audio/*" multiple />
-              <strong>Import songs from your device</strong>
-              <span>Add music files you already own.</span>
+              <strong>Import from your device</strong>
+              <span>Add complete audio files you already own.</span>
             </label>
 
             <form id="downloadForm" class="download-card">
@@ -202,11 +230,11 @@
           </div>
 
           <p class="panel-note">
-            Save audio that you own or are allowed to store. Some links may block
-            downloads if the site disallows cross-site access.
+            Save audio that you own or are allowed to store. Some sites may
+            still block direct file access in the browser.
           </p>
           <p id="libraryStatus" class="status-text" aria-live="polite">
-            Your crate is empty for now.
+            Your saved library is empty for now.
           </p>
           <div id="libraryList" class="library-list"></div>
         </section>
@@ -214,23 +242,23 @@
         <section class="panel panel-mixes">
           <div class="panel-heading">
             <div>
-              <p class="panel-kicker">Fun extras</p>
-              <h2>Mini control room</h2>
+              <p class="panel-kicker">Listening room</p>
+              <h2>At a glance</h2>
             </div>
-            <span class="panel-badge">Retro mode</span>
+            <span class="panel-badge">Vintage mode</span>
           </div>
 
           <div class="mix-grid">
             <article class="mix-card warm">
-              <p>Online shelf</p>
+              <p>Archive shelf</p>
               <strong id="onlineCount">0</strong>
-              <span>preview tracks loaded</span>
+              <span>playable tracks ready</span>
             </article>
 
             <article class="mix-card cool">
-              <p>Offline crate</p>
+              <p>Your library</p>
               <strong id="offlineCount">0</strong>
-              <span>songs ready without internet</span>
+              <span>saved songs ready anytime</span>
             </article>
 
             <article class="mix-card coral">
@@ -240,18 +268,27 @@
             </article>
 
             <article class="mix-card stripe">
-              <p>Quick fun</p>
+              <p>Quick spin</p>
               <button class="action-button" id="luckyMixCardBtn" type="button">
                 Start Lucky Mix
               </button>
               <button class="ghost-button" id="installBtn" type="button" hidden>
-                Install Music Book
+                Install Audio Book
               </button>
-              <span id="installStatus">Add the app to your home screen for an even better offline shell.</span>
+              <span id="installStatus">Install the app for a quieter, library-like listening space.</span>
             </article>
           </div>
         </section>
       </main>
+
+      <footer class="site-legal">
+        <p>Copyright (c) 2026 Gaida'a Belal. All rights reserved.</p>
+        <p class="site-legal-note">
+          Copyright is claimed only in the original app code, original interface,
+          and bundled project assets. External recordings, lyrics, cover art, and
+          service data remain the property of their respective owners.
+        </p>
+      </footer>
     </div>
 
     <audio id="audioPlayer" preload="metadata"></audio>

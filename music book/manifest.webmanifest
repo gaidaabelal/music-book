@@ -1,17 +1,78 @@
 {
-  "name": "Music Book",
-  "short_name": "Music Book",
-  "description": "A playful retro music app for online previews and offline listening.",
+  "id": "./",
+  "name": "Audio Book",
+  "short_name": "Audio Book",
+  "description": "A clean vintage audio app for full archive tracks and your own saved songs.",
+  "lang": "en",
+  "dir": "ltr",
   "start_url": "./",
+  "scope": "./",
   "display": "standalone",
-  "background_color": "#fff5d8",
-  "theme_color": "#f46138",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "orientation": "any",
+  "background_color": "#08111d",
+  "theme_color": "#24313e",
+  "categories": ["music", "entertainment", "lifestyle"],
+  "prefer_related_applications": false,
   "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
     {
       "src": "icon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Search Vintage Jazz",
+      "short_name": "Jazz",
+      "description": "Jump into vintage jazz recordings.",
+      "url": "./?search=vintage%20jazz",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Search Acoustic Folk",
+      "short_name": "Folk",
+      "description": "Open a folk-focused archive search.",
+      "url": "./?search=acoustic%20folk",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Search Old Time Radio",
+      "short_name": "Radio",
+      "description": "Launch straight into classic radio recordings.",
+      "url": "./?search=old%20time%20radio",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
     }
   ]
 }
